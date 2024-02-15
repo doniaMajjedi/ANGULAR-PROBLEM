@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rotating CSS Cards by Creative Tim </title>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <link href='/assets/css/bootstrap.css' rel='stylesheet' />
+
+    <link href="/assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+
+<!--     <link href='css/ct-navbar.css' rel='stylesheet' /> -->
+    <link href='/assets/css/rotating-card.css' rel='stylesheet' />
+
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport' />
+
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet"><!DOCTYPE html>
+
+
+		<!-- STYLE CSS-->
+		<link rel="stylesheet" href="/assets/css/style.css">
+    
+    <style>
+        body{
+            margin-top: 100px;
+        }
+        .navbar-default .navbar-nav > li > a{
+            padding: 15px 15px;
+            margin: 5px 0;
+        }
+
+        .navbar-default{
+            padding: 10px 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-color: transparent;
+            box-shadow: 0 0px 13px rgba(0,0,0,.2);
+        }
+        .btn-info,
+        .btn-info:hover,
+        .btn-info:focus{
+            color: #FFF !important;
+            background-color: #00bbff !important;
+            border-color: #00bbff !important;
+        }
+
+        .btn-info{
+            opacity: .8;
+            transition: all 0.1s;
+            -webkit-transition: all 0.1s;
+        }
+        .btn-info:hover,
+        .btn-info:focus{
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    
+  <div class="card-container">
+    <div class="card">
+        <div class="front">
+            <div class="cover">
+                <img src="assets/images/rotating_card_thumb3.png"/>
+            </div>
+                <!-- image -->
+            <div class="user">
+                <img class="img-circle" src="assets/images/rotating_card_profile.png"/>
+            </div>
+            <div class="content">
+                <div class="main">
+                    <!-- name -->
+                    <h3 class="name">{{name}}</h3>
+                    <!-- profession -->
+                    <p class="profession">{{job}}</p>
+                    <!-- desc -->
+                    <p class="text-center" id="desc">{{desc}}</p>
+                </div>
+                <div class="footer">
+                    <div class="rating">
+                        <i class="fa fa-mail-forward"></i> Auto Rotation
+                    </div>
+                </div>
+            </div>
+        </div> <!-- end front panel -->
+        <div class="back">
+            
+            <div class="header">
+                <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
+            </div>
+
+            <div class="content">
+                <div class="main">
+                    <h4 class="text-center">Job Description</h4>
+                    <p class="text-center" id="jobdesc">{{jobdesc}}</p>
+
+                    <div class="stats-container">
+                        <div class="stats">
+                            <h4 id="follo">{{follo}}</h4>
+                            <p>
+                                Followers
+                            </p>
+                        </div>
+                        <div class="stats">
+                            <h4 id="folloing">{{folloing}}</h4>
+                            <p>
+                                Following
+                            </p>
+                        </div>
+                        <div class="stats">
+                            <h4 id="proj">{{proj}}</h4>
+                            <p>
+                                Projects
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="footer">
+                <div class="social-links text-center">
+                    <a href="https://creative-tim.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+                    <a href="https://creative-tim.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
+                    <a href="https://creative-tim.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+                </div>
+            </div>
+        </div> <!-- end back panel -->
+    </div> <!-- end card -->
+<div class="wrapper">
+    <form #userform="ngForm" action="" id="wizard">
+        <!-- SECTION 1 -->
+        <h4></h4>
+        <section>
+            <div class="inner">
+                
+                <!-- image -->
+                <a href="#" class="avartar">
+                    <img src="/assets/images/avartar.png" alt="">
+                </a>
+                <!-- name -->
+                <div class="form-row form-group">
+                    <div class="form-holder">
+                        <input [(ngModel)]="name" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="namef" placeholder="Name">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-holder">
+                        <input [(ngModel)]="job" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="job" placeholder="Job">
+                        <i class="zmdi zmdi-lock-open small"></i>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-holder">
+                        <input [(ngModel)]="desc" [ngModelOptions]="{standalone: true}"  type="text" class="form-control" id="descrip" placeholder="Description">
+                        <i class="zmdi zmdi-email small"></i>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-holder">
+                        <input [(ngModel)]="jobdesc" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="jobdescf" placeholder="Job Description">
+                        <i class="zmdi zmdi-smartphone-android"></i>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-holder">
+                        <input [(ngModel)]="follo" [ngModelOptions]="{standalone: true}" type="number" class="form-control" id="follof" placeholder="Followers">
+                        <i class="zmdi zmdi-map small"></i>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-holder">
+                        <input [(ngModel)]="folloing" type="number" class="form-control" id="folloingf" placeholder="Following">
+                        <i class="zmdi zmdi-account-box-o small"></i>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-holder">
+                        <input type="number" class="form-control" id="projf" placeholder="Projects" [(ngModel)]="proj" [ngModelOptions]="{standalone: true}">
+                        <i class="zmdi zmdi-account-box-o small"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        
+</form>
+</div>
+</div> <!-- end card-container -->
+</body>
+</html>

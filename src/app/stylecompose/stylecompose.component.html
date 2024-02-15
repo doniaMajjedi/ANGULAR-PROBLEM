@@ -1,0 +1,26 @@
+
+
+
+<label>Background Color</label><br>
+<input [(ngModel)]="bgcolor" type="text" id="myInput" ><br>
+
+<label>Text Color</label><br>
+<input [(ngModel)]="col" type="text"  id="myInput2"><br>
+
+<label>Size</label><br>
+<input #siize [(ngModel)]="size" type="number"  id="myInput3"><br>
+
+<label>Police</label><br>
+<select [(ngModel)]="font" class="form-control">
+    <option value=""></option>
+    <option value="garamond">Garamond</option>
+    <option value="phosphate">Phosphate</option>
+    <option value="arial">Arial</option>
+</select><br>
+
+<div [ngStyle]="{
+    'backgroundColor':bgcolor,
+    'color':col,
+    'fontSize':size,
+    'fontFamily':font
+}">The result</div>
